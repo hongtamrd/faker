@@ -1,9 +1,8 @@
 package faker
 
 import (
+	"github.com/hongtamrd/faker/data"
 	"math/rand"
-
-	"./data"
 )
 
 // Check if in lib
