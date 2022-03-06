@@ -4,7 +4,7 @@ import "strconv"
 
 // UserAgent will generate a random broswer user agent
 func UserAgent() string {
-	randNum := randIntRange(0, 3)
+	randNum := randIntRange(0, 1)
 	switch randNum {
 	case 0:
 		return ChromeUserAgent()
@@ -21,13 +21,13 @@ func UserAgent() string {
 
 // ChromeUserAgent will generate a random chrome browser user agent string
 func ChromeUserAgent() string {
-	var ver = []string{"81.0.4044.138","81.0.4044.129","81.0.4044.122", "81.0.4044.92", "80.0.3987.163", "80.0.3987.149", "80.0.3987.132", "80.0.3987.122", "80.0.3987.116", "80.0.3987.87", "79.0.3945.130", "79.0.3945.117", "79.0.3945.88", "79.0.3945.79", "78.0.3904.108", "78.0.3904.97", "78.0.3904.87", "78.0.3904.70", "77.0.3865.120", "77.0.3865.90", "77.0.3865.75", "76.0.3809.132", "76.0.3809.100", "75.0.3770.142", "75.0.3770.100", "75.0.3770.90", "75.0.3770.80"}
+	var ver = []string{"99.0.4844.58", "99.0.4844.48", "98.0.4758.101", "98.0.4758.87", "97.0.4692.99", "97.0.4692.87", "97.0.4692.71", "96.0.4664.110", "96.0.4664.93", "95.0.4638.74", "95.0.4638.54", "94.0.4606.81", "94.0.4606.71", "94.0.4606.61", "94.0.4606.50", "94.0.4606.61", "93.0.4577.82", "93.0.4577.63", "92.0.4515.159", "92.0.4515.131", "92.0.4515.107", "91.0.4472.164", "91.0.4472.124", "91.0.4472.114", "91.0.4472.101", "91.0.4472.77", "90.0.4430.212", "90.0.4430.85", "90.0.4430.72", "89.0.4389.114", "89.0.4389.90", "89.0.4389.82", "87.0.4280.141", "87.0.4280.88", "87.0.4280.66", "86.0.4240.198", "86.0.4240.111", "86.0.4240.75", "85.0.4183.121", "85.0.4183.102", "85.0.4183.83", "84.0.4147.135", "84.0.4147.125", "84.0.4147.105", "84.0.4147.89", "83.0.4103.106", "83.0.4103.97", "83.0.4103.61", "81.0.4044.138","81.0.4044.129","81.0.4044.122", "81.0.4044.92", "80.0.3987.163", "80.0.3987.149", "80.0.3987.132", "80.0.3987.122", "80.0.3987.116", "80.0.3987.87"}
 	return "Mozilla/5.0 " + "(" + randomPlatform() + ") AppleWebKit/537.36 (KHTML, like Gecko) Chrome/" + RandString(ver)+ " Safari/537.36"
 }
 
 // FirefoxUserAgent will generate a random firefox broswer user agent string
 func FirefoxUserAgent() string {
-	rv := strconv.Itoa(randIntRange(55, 76))
+	rv := strconv.Itoa(randIntRange(82, 96))
 	ver := "Gecko/20100101 Firefox/" + rv + ".0"
 	platforms := []string{
 		"(" + windowsPlatformToken() + "; rv:" + rv + ".0) " + ver,
@@ -40,8 +40,8 @@ func FirefoxUserAgent() string {
 
 // SafariUserAgent will generate a random safari browser user agent string
 func SafariUserAgent() string {
-	randNum := strconv.Itoa(randIntRange(531, 536)) + "." + strconv.Itoa(randIntRange(1, 51)) + "." + strconv.Itoa(randIntRange(1, 8))
-	ver := strconv.Itoa(randIntRange(4, 6)) + "." + strconv.Itoa(randIntRange(0, 2))
+	randNum := strconv.Itoa(randIntRange(531, 604)) + "." + strconv.Itoa(randIntRange(1, 2)) + "." + strconv.Itoa(randIntRange(1, 10))
+	ver := strconv.Itoa(randIntRange(9, 12)) + "." + strconv.Itoa(randIntRange(0, 2))
 
 	mobileDevices := []string{
 		"iPhone; CPU iPhone OS",
@@ -71,7 +71,7 @@ func linuxPlatformToken() string {
 
 // macPlatformToken will generate a random mac platform
 func macPlatformToken() string {
-	return "Macintosh; " + getRandValue([]string{"computer", "mac_processor"}) + " Mac OS X 10_" + strconv.Itoa(randIntRange(5, 15)) + "_" + strconv.Itoa(randIntRange(1, 3))
+	return "Macintosh; " + getRandValue([]string{"computer", "mac_processor"}) + " Mac OS X 10_" + strconv.Itoa(randIntRange(8, 15)) + "_" + strconv.Itoa(randIntRange(1, 5))
 }
 
 // windowsPlatformToken will generate a random windows platform
